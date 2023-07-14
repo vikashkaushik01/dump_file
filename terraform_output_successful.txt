@@ -1,0 +1,274 @@
+rbac.authorization.k8s.io/v1/namespaces/nirmata/rolebindings/nirmata-admin-binding]
+╷
+│ Error: Provider produced inconsistent result after apply
+│ 
+│ When applying changes to module.n4k_module.kubectl_manifest.crd[9], provider
+│ "module.n4k_module.provider[\"registry.terraform.io/gavinbunney/kubectl\"]" produced an
+│ unexpected new value: Root resource was present, but now absent.
+│ 
+│ This is a bug in the provider, which should be reported in the provider's own issue tracker.
+╵
+Terraform apply failed. Retrying...
+Running Terraform apply...
+module.n4k_module.nirmata_cluster_registered.aks-registered: Refreshing state... [id=046a817e-72c8-4087-825f-3cb6a611c418]
+module.n4k_module.data.azurerm_kubernetes_cluster.cluster: Reading...
+module.n4k_module.data.azurerm_kubernetes_cluster.cluster: Read complete after 1s [id=/subscriptions/baf89069-e8f3-46f8-b74e-c146931ce7a4/resourceGroups/vikash-custodian-testing/providers/Microsoft.ContainerService/managedClusters/private-aks]
+module.n4k_module.data.kubectl_filename_list.crd: Reading...
+module.n4k_module.data.kubectl_filename_list.deployment: Reading...
+module.n4k_module.data.kubectl_filename_list.namespace: Reading...
+module.n4k_module.data.kubectl_filename_list.namespace: Read complete after 0s [id=6459f4330e821d1d63bdec12658d4372e089f94639edc280a2e9bd864229dbe4]
+module.n4k_module.data.kubectl_filename_list.crd: Read complete after 0s [id=faf611c7af96ce76e7e841b08a715a8f3580974ae0cf6aa75d1ec137b41a8d8f]
+module.n4k_module.data.kubectl_filename_list.deployment: Read complete after 0s [id=e0bc0c97c5df1bbcae0804b51b0a98eab88dc0225d9128ebe1031fdf08a2e1fa]
+module.n4k_module.kubectl_manifest.namespace[0]: Refreshing state... [id=/api/v1/namespaces/nirmata]
+module.n4k_module.kubectl_manifest.crd[10]: Refreshing state... [id=/api/v1/namespaces/nirmata/configmaps/otel-agent-config]
+module.n4k_module.kubectl_manifest.crd[4]: Refreshing state... [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata]
+module.n4k_module.kubectl_manifest.crd[2]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:nirmata-privileged]
+module.n4k_module.kubectl_manifest.crd[7]: Refreshing state... [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata-controller]
+module.n4k_module.kubectl_manifest.crd[6]: Refreshing state... [id=/api/v1/namespaces/nirmata/configmaps/nirmata-kube-controller-config]
+module.n4k_module.kubectl_manifest.crd[3]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata-cluster-admin-binding]
+module.n4k_module.kubectl_manifest.crd[5]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata:policyexception-manager]
+module.n4k_module.kubectl_manifest.crd[0]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:policyexception-manager]
+module.n4k_module.kubectl_manifest.crd[1]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/nirmata/rolebindings/nirmata-admin-binding]
+module.n4k_module.kubectl_manifest.crd[8]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata-controller-binding]
+module.n4k_module.kubectl_manifest.crd[11]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:nirmata-operator]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions
+are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # module.n4k_module.kubectl_manifest.crd[4] will be updated in-place
+  ~ resource "kubectl_manifest" "crd" {
+        id                      = "/api/v1/namespaces/nirmata/serviceaccounts/nirmata"
+        name                    = "nirmata"
+      ~ yaml_incluster          = (sensitive value)
+        # (15 unchanged attributes hidden)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[9] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = "v1"
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = "Secret"
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = "nirmata-sa-secret"
+      + namespace               = "nirmata"
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = <<-EOT
+            apiVersion: v1
+            kind: Secret
+            metadata:
+              annotations:
+                kubernetes.io/service-account.name: nirmata
+              name: nirmata-sa-secret
+              namespace: nirmata
+            type: kubernetes.io/service-account-token
+        EOT
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.deployment[0] will be created
+  + resource "kubectl_manifest" "deployment" {
+      + api_version             = "apps/v1"
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = "Deployment"
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = "otel-agent"
+      + namespace               = "nirmata"
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = <<-EOT
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              labels:
+                app: opentelemetry
+                app.kubernetes.io/instance: nirmata
+                app.kubernetes.io/name: nirmata
+                component: otel-agent
+              name: otel-agent
+              namespace: nirmata
+            spec:
+              selector:
+                matchLabels:
+                  app: opentelemetry
+                  app.kubernetes.io/instance: nirmata
+                  app.kubernetes.io/name: nirmata
+                  component: otel-agent
+              template:
+                metadata:
+                  labels:
+                    app: opentelemetry
+                    app.kubernetes.io/instance: nirmata
+                    app.kubernetes.io/name: nirmata
+                    component: otel-agent
+                spec:
+                  containers:
+                  - image: ghcr.io/nirmata/metrics-agent:0.38.3
+                    livenessProbe:
+                      httpGet:
+                        path: /metrics
+                        port: 8888
+                        scheme: HTTP
+                    name: otel-agent
+                    readinessProbe:
+                      httpGet:
+                        path: /metrics
+                        port: 8888
+                        scheme: HTTP
+                    resources:
+                      limits:
+                        cpu: 100m
+                        memory: 200Mi
+                      requests:
+                        cpu: 100m
+                        memory: 200Mi
+                    securityContext:
+                      allowPrivilegeEscalation: false
+                      capabilities:
+                        drop:
+                        - ALL
+                      readOnlyRootFilesystem: true
+                      runAsNonRoot: true
+                      seccompProfile:
+                        type: RuntimeDefault
+                    volumeMounts:
+                    - mountPath: /etc/otel/config.yaml
+                      name: data
+                      readOnly: true
+                      subPath: config.yaml
+                  terminationGracePeriodSeconds: 30
+                  volumes:
+                  - configMap:
+                      name: otel-agent-config
+                    name: data
+        EOT
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.deployment[1] will be created
+  + resource "kubectl_manifest" "deployment" {
+      + api_version             = "apps/v1"
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = "Deployment"
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = "nirmata-kube-controller"
+      + namespace               = "nirmata"
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = <<-EOT
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: nirmata-kube-controller
+              namespace: nirmata
+            spec:
+              replicas: 1
+              selector:
+                matchLabels:
+                  app: nirmata-kube-controller
+                  app.kubernetes.io/instance: nirmata
+                  app.kubernetes.io/name: nirmata
+                  nirmata.io/container.type: system
+              template:
+                metadata:
+                  labels:
+                    app: nirmata-kube-controller
+                    app.kubernetes.io/instance: nirmata
+                    app.kubernetes.io/name: nirmata
+                    nirmata.io/container.type: system
+                spec:
+                  containers:
+                  - args:
+                    - -token
+                    - $(TOKEN)
+                    - -url
+                    - $(URL)
+                    - -event-aggregation
+                    command:
+                    - /nirmata-kube-controller
+                    env:
+                    - name: TOKEN
+                      value: 046a817e-72c8-4087-825f-3cb6a611c418
+                    - name: URL
+                      value: wss://www.nirmata.io/tunnels
+                    image: ghcr.io/nirmata/nirmata-kube-controller:v3.9.7
+                    imagePullPolicy: IfNotPresent
+                    livenessProbe:
+                      exec:
+                        command:
+                        - /nirmata-kube-controller
+                    name: nirmata-kube-controller
+                    readinessProbe:
+                      exec:
+                        command:
+                        - /nirmata-kube-controller
+                    resources:
+                      limits:
+                        memory: 512Mi
+                      requests:
+                        cpu: 250m
+                        memory: 200Mi
+                    securityContext:
+                      allowPrivilegeEscalation: false
+                      capabilities:
+                        drop:
+                        - ALL
+                      readOnlyRootFilesystem: true
+                      runAsNonRoot: true
+                      seccompProfile:
+                        type: RuntimeDefault
+                  hostNetwork: false
+                  imagePullSecrets:
+                  - name: nirmata-controller-registry-secret
+                  securityContext:
+                    seccompProfile:
+                      type: RuntimeDefault
+                  serviceAccountName: nirmata
+                  tolerations:
+                  - effect: NoSchedule
+                    key: node-role.kubernetes.io/master
+                    operator: Exists
+        EOT
+      + yaml_incluster          = (sensitive value)
+    }
+
+Plan: 3 to add, 1 to change, 0 to destroy.
+module.n4k_module.kubectl_manifest.crd[9]: Creating...
+module.n4k_module.kubectl_manifest.crd[4]: Modifying... [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata]
+module.n4k_module.kubectl_manifest.crd[4]: Modifications complete after 0s [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata]
+module.n4k_module.kubectl_manifest.crd[9]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/secrets/nirmata-sa-secret]
+module.n4k_module.kubectl_manifest.deployment[0]: Creating...
+module.n4k_module.kubectl_manifest.deployment[1]: Creating...
+module.n4k_module.kubectl_manifest.deployment[0]: Creation complete after 4s [id=/apis/apps/v1/namespaces/nirmata/deployments/otel-agent]
+module.n4k_module.kubectl_manifest.deployment[1]: Creation complete after 4s [id=/apis/apps/v1/namespaces/nirmata/deployments/nirmata-kube-controller]
+
+Apply complete! Resources: 3 added, 1 changed, 0 destroyed.
+Terraform apply successful.
