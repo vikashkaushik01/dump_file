@@ -1,0 +1,11 @@
+NAME                                          READY   STATUS             RESTARTS      AGE
+pod/nirmata-kube-controller-5586b6f66-qdtxs   0/1     CrashLoopBackOff   7 (34s ago)   11m
+pod/otel-agent-589454c45c-fbvsg               1/1     Running            0             11m
+
+NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nirmata-kube-controller   0/1     1            0           11m
+deployment.apps/otel-agent                1/1     1            1           11m
+
+NAME                                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/nirmata-kube-controller-5586b6f66   1         1         0       11m
+replicaset.apps/otel-agent-589454c45c               1         1         1       11m

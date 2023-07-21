@@ -1,0 +1,85 @@
+Name:             nirmata-kube-controller-5586b6f66-qdtxs
+Namespace:        nirmata
+Priority:         0
+Service Account:  nirmata
+Node:             aks-agentpool-29403250-vmss000000/10.224.3.10
+Start Time:       Fri, 21 Jul 2023 09:01:43 +0000
+Labels:           app=nirmata-kube-controller
+                  app.kubernetes.io/instance=nirmata
+                  app.kubernetes.io/name=nirmata
+                  nirmata.io/container.type=system
+                  pod-template-hash=5586b6f66
+Annotations:      <none>
+Status:           Running
+SeccompProfile:   RuntimeDefault
+IP:               10.224.3.94
+IPs:
+  IP:           10.224.3.94
+Controlled By:  ReplicaSet/nirmata-kube-controller-5586b6f66
+Containers:
+  nirmata-kube-controller:
+    Container ID:    containerd://fc3bd69ae66fade663266b158a2e990e9865453d9868aad085ec0a7afab64d9f
+    Image:           ghcr.io/nirmata/nirmata-kube-controller:v3.9.7
+    Image ID:        ghcr.io/nirmata/nirmata-kube-controller@sha256:1552fd73cbd7fbe853faf0a9213eb595b9c0473c5065afaa49bbd546437de240
+    Port:            <none>
+    Host Port:       <none>
+    SeccompProfile:  RuntimeDefault
+    Command:
+      /nirmata-kube-controller
+    Args:
+      -token
+      $(TOKEN)
+      -url
+      $(URL)
+      -event-aggregation
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    255
+      Started:      Fri, 21 Jul 2023 09:07:45 +0000
+      Finished:     Fri, 21 Jul 2023 09:07:45 +0000
+    Ready:          False
+    Restart Count:  6
+    Limits:
+      memory:  512Mi
+    Requests:
+      cpu:      250m
+      memory:   200Mi
+    Liveness:   exec [/nirmata-kube-controller] delay=0s timeout=1s period=10s #success=1 #failure=3
+    Readiness:  exec [/nirmata-kube-controller] delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment:
+      TOKEN:  5f7169ac-566d-4b1f-92f3-2aa0219c0b05
+      URL:    wss://www.nirmata.io/tunnels
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-v65gw (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-v65gw:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   Burstable
+Node-Selectors:              <none>
+Tolerations:                 node-role.kubernetes.io/master:NoSchedule op=Exists
+                             node.kubernetes.io/memory-pressure:NoSchedule op=Exists
+                             node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                  From               Message
+  ----     ------     ----                 ----               -------
+  Normal   Scheduled  10m                  default-scheduler  Successfully assigned nirmata/nirmata-kube-controller-5586b6f66-qdtxs to aks-agentpool-29403250-vmss000000
+  Normal   Pulling    10m                  kubelet            Pulling image "ghcr.io/nirmata/nirmata-kube-controller:v3.9.7"
+  Normal   Pulled     10m                  kubelet            Successfully pulled image "ghcr.io/nirmata/nirmata-kube-controller:v3.9.7" in 945.272579ms
+  Warning  Unhealthy  10m (x2 over 10m)    kubelet            Readiness probe errored: rpc error: code = NotFound desc = failed to exec in container: failed to load task: no running task found: task 091739f7ad1a749ecb2ad7a95e015d27065001fcdaf3a6070717abf7b2a8acc6 not found: not found
+  Normal   Created    9m51s (x4 over 10m)  kubelet            Created container nirmata-kube-controller
+  Normal   Started    9m51s (x4 over 10m)  kubelet            Started container nirmata-kube-controller
+  Normal   Pulled     9m51s (x3 over 10m)  kubelet            Container image "ghcr.io/nirmata/nirmata-kube-controller:v3.9.7" already present on machine
+  Warning  BackOff    37s (x58 over 10m)   kubelet            Back-off restarting failed container

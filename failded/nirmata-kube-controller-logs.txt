@@ -1,0 +1,25 @@
+I0721 09:12:54.319897       1 version.go:13] Starting kube-controller with ProductType: nirmata
+I0721 09:12:54.319938       1 version.go:14] nirmata-kube-controller BuildHash: v3.9.7
+I0721 09:12:54.319943       1 version.go:15] nirmata-kube-controller BuildTime: 2023-07-04_02:52:09PM
+I0721 09:12:54.321076       1 main.go:219] Using nirmata certificates for secure connections
+I0721 09:12:54.348931       1 metrics.go:26] sending metrics to wss://www.nirmata.io/host-gateway/k8sClusterEvents
+I0721 09:12:54.353315       1 metrics.go:44] starting metrics collection to wss://www.nirmata.io/host-gateway/k8sClusterEvents at 1m0s intervals
+I0721 09:12:54.353494       1 metrics.go:120] connecting to WSSClient {address:wss://www.nirmata.io/host-gateway/k8sClusterEvents, proxy:, state:Pending, err:} for metrics with token 5f7169ac-566d-4b1f-92f3-2aa0219c0b05
+I0721 09:12:54.356977       1 listener.go:51] sending change events to wss://www.nirmata.io/host-gateway/k8sChangeEvents
+I0721 09:12:54.361563       1 ctrl.go:48] Starting kube-controller
+I0721 09:12:54.361918       1 listener.go:112] refreshing change events listener
+I0721 09:12:54.361984       1 watches.go:177] stopping watches
+I0721 09:12:54.362300       1 listener.go:252] connecting to WSSClient {address:wss://www.nirmata.io/host-gateway/k8sChangeEvents, proxy:, state:Pending, err:} for change events
+I0721 09:12:54.363028       1 watches.go:130] watch starting for /v1, Resource=events
+E0721 09:12:54.363670       1 watches.go:111] failed to watch resource &{gvr:0xc000446f00 name: namespace: key:clusterpolicyreports.v1alpha2.wgpolicyk8s.io//}: the server could not find the requested resource
+E0721 09:12:54.363700       1 watches.go:111] failed to watch resource &{gvr:0xc000446ea0 name: namespace: key:policyreports.v1alpha2.wgpolicyk8s.io//}: the server could not find the requested resource
+I0721 09:12:54.363954       1 watches.go:130] watch starting for /v1, Resource=events
+E0721 09:12:54.364451       1 watches.go:111] failed to watch resource &{gvr:0xc000447020 name: namespace: key:policyexceptions.v2alpha1.kyverno.io//}: the server could not find the requested resource
+E0721 09:12:54.364978       1 watches.go:111] failed to watch resource &{gvr:0xc000446fc0 name: namespace: key:clusterpolicies.v1.kyverno.io//}: the server could not find the requested resource
+E0721 09:12:54.365010       1 watches.go:111] failed to watch resource &{gvr:0xc000446f60 name: namespace: key:policies.v1.kyverno.io//}: the server could not find the requested resource
+I0721 09:12:54.367097       1 ctrl.go:55] Got namespace: nirmata
+I0721 09:12:54.372711       1 ctrl.go:62] Got service account: &ServiceAccount{ObjectMeta:{nirmata  nirmata  16e15c1b-5ac5-4ebe-8aa3-ff568b234a86 40447 0 2023-07-21 09:01:42 +0000 UTC <nil> <nil> map[] map[kubectl.kubernetes.io/last-applied-configuration:{"apiVersion":"v1","kind":"ServiceAccount","metadata":{"annotations":{},"name":"nirmata","namespace":"nirmata"},"secrets":[{"name":"nirmata-sa-secret"}]}
+] [] [] [{HashiCorp Update v1 2023-07-21 09:01:42 +0000 UTC FieldsV1 {"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:secrets":{".":{},"k:{\"name\":\"nirmata-sa-secret\"}":{}}} }]},Secrets:[]ObjectReference{ObjectReference{Kind:,Namespace:,Name:nirmata-sa-secret,UID:,APIVersion:,ResourceVersion:,FieldPath:,},},ImagePullSecrets:[]LocalObjectReference{},AutomountServiceAccountToken:nil,}
+I0721 09:12:54.372972       1 account.go:20] Fetching secrets for: [{  nirmata-sa-secret    }]
+I0721 09:12:54.373015       1 account.go:24] Fetching  /nirmata-sa-secret
+F0721 09:12:54.378851       1 main.go:191] run exited with error: secrets "nirmata-sa-secret" not found
