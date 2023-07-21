@@ -1,9 +1,0 @@
-
-apiVersion: v1
-kind: Secret
-metadata:
-  name: nirmata-sa-secret
-  namespace: nirmata
-  annotations:
-    kubernetes.io/service-account.name: nirmata
-type: kubernetes.io/service-account-token

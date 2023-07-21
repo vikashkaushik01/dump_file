@@ -1,0 +1,157 @@
+
+apiVersion: "rbac.authorization.k8s.io/v1"
+kind: "ClusterRole"
+metadata:
+  annotations: {}
+  name: "nirmata:nirmata-operator"
+rules:
+- apiGroups:
+  - ""
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "nodes"
+  verbs:
+  - "create"
+  - "delete"
+  - "get"
+  - "list"
+  - "patch"
+  - "update"
+  - "watch"
+- apiGroups:
+  - ""
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "configmaps"
+  - "endpoints"
+  - "persistentvolumeclaims"
+  - "persistentvolumeclaims/status"
+  - "pods"
+  - "replicationcontrollers"
+  - "replicationcontrollers/scale"
+  - "serviceaccounts"
+  - "services"
+  - "services/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - ""
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "bindings"
+  - "events"
+  - "limitranges"
+  - "namespaces/status"
+  - "pods/log"
+  - "pods/status"
+  - "replicationcontrollers/status"
+  - "resourcequotas"
+  - "resourcequotas/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - ""
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "namespaces"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "apps"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "controllerrevisions"
+  - "daemonsets"
+  - "daemonsets/status"
+  - "deployments"
+  - "deployments/scale"
+  - "deployments/status"
+  - "replicasets"
+  - "replicasets/scale"
+  - "replicasets/status"
+  - "statefulsets"
+  - "statefulsets/scale"
+  - "statefulsets/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "autoscaling"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "horizontalpodautoscalers"
+  - "horizontalpodautoscalers/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "batch"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "cronjobs"
+  - "cronjobs/status"
+  - "jobs"
+  - "jobs/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "extensions"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "daemonsets"
+  - "daemonsets/status"
+  - "deployments"
+  - "deployments/scale"
+  - "deployments/status"
+  - "ingresses"
+  - "ingresses/status"
+  - "networkpolicies"
+  - "replicasets"
+  - "replicasets/scale"
+  - "replicasets/status"
+  - "replicationcontrollers/scale"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "policy"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "poddisruptionbudgets"
+  - "poddisruptionbudgets/status"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"
+- apiGroups:
+  - "networking.k8s.io"
+  nonResourceURLs: []
+  resourceNames: []
+  resources:
+  - "ingresses"
+  - "ingresses/status"
+  - "networkpolicies"
+  verbs:
+  - "get"
+  - "list"
+  - "watch"

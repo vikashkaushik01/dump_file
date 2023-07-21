@@ -1,0 +1,492 @@
+azureuser@private-vm:~/last/terraform-modules/NPM-workflow/AKS-NPM-workflow$ terraform apply --auto-approve
+module.n4k_module.nirmata_cluster_registered.aks-registered: Refreshing state... [id=ebd5defa-1e4f-4a76-96d1-cad583a653bb]
+module.n4k_module.data.azurerm_kubernetes_cluster.cluster: Reading...
+module.n4k_module.data.azurerm_kubernetes_cluster.cluster: Read complete after 1s [id=/subscriptions/baf89069-e8f3-46f8-b74e-c146931ce7a4/resourceGroups/vikash-custodian-testing/providers/Microsoft.ContainerService/managedClusters/private-aks]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.n4k_module.data.kubectl_filename_list.crd will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "kubectl_filename_list" "crd" {
+      + basenames = (known after apply)
+      + id        = (known after apply)
+      + matches   = (known after apply)
+      + pattern   = "/tmp/controller-1922118466/temp-03-*"
+    }
+
+  # module.n4k_module.data.kubectl_filename_list.deployment will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "kubectl_filename_list" "deployment" {
+      + basenames = (known after apply)
+      + id        = (known after apply)
+      + matches   = (known after apply)
+      + pattern   = "/tmp/controller-1922118466/temp-04-*"
+    }
+
+  # module.n4k_module.data.kubectl_filename_list.namespace will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "kubectl_filename_list" "namespace" {
+      + basenames = (known after apply)
+      + id        = (known after apply)
+      + matches   = (known after apply)
+      + pattern   = "/tmp/controller-1922118466/temp-01-*"
+    }
+
+  # module.n4k_module.data.kubectl_filename_list.secret will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "kubectl_filename_list" "secret" {
+      + basenames = (known after apply)
+      + id        = (known after apply)
+      + matches   = (known after apply)
+      + pattern   = "/tmp/controller-1922118466/temp-02-*"
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[0] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[1] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[2] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[3] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[4] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[5] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[6] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[7] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[8] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[9] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.crd[10] will be created
+  + resource "kubectl_manifest" "crd" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.deployment[0] will be created
+  + resource "kubectl_manifest" "deployment" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.deployment[1] will be created
+  + resource "kubectl_manifest" "deployment" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.namespace[0] will be created
+  + resource "kubectl_manifest" "namespace" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.kubectl_manifest.secret[0] will be created
+  + resource "kubectl_manifest" "secret" {
+      + api_version             = (known after apply)
+      + apply_only              = true
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait                    = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # module.n4k_module.nirmata_cluster_registered.aks-registered will be updated in-place
+  ~ resource "nirmata_cluster_registered" "aks-registered" {
+      - delete_action                 = "remove" -> null
+        id                            = "ebd5defa-1e4f-4a76-96d1-cad583a653bb"
+        name                          = "newv1225-aks"
+        # (9 unchanged attributes hidden)
+    }
+
+Plan: 15 to add, 1 to change, 0 to destroy.
+module.n4k_module.nirmata_cluster_registered.aks-registered: Modifying... [id=ebd5defa-1e4f-4a76-96d1-cad583a653bb]
+module.n4k_module.nirmata_cluster_registered.aks-registered: Modifications complete after 0s [id=ebd5defa-1e4f-4a76-96d1-cad583a653bb]
+module.n4k_module.data.kubectl_filename_list.crd: Reading...
+module.n4k_module.data.kubectl_filename_list.namespace: Reading...
+module.n4k_module.data.kubectl_filename_list.deployment: Reading...
+module.n4k_module.data.kubectl_filename_list.namespace: Read complete after 0s [id=3836f3ba75e17241d2c04bdc2fc04d0bfb88230cf30d795183d6c604c1bd358e]
+module.n4k_module.data.kubectl_filename_list.deployment: Read complete after 0s [id=46460862437cdfa300d6656bed641e8adc315e335a5bd960db803e6487cd24b3]
+module.n4k_module.data.kubectl_filename_list.crd: Read complete after 0s [id=50610a11dae01840150424084f57ff14b17a8d103fdabd7335444b3bf478b447]
+module.n4k_module.data.kubectl_filename_list.secret: Reading...
+module.n4k_module.data.kubectl_filename_list.secret: Read complete after 0s [id=fc4221d53c0a0f20cf5e0eec8c30314024bd17229bbe2b4fc2108d1bf78012b8]
+module.n4k_module.kubectl_manifest.namespace[0]: Creating...
+module.n4k_module.kubectl_manifest.namespace[0]: Creation complete after 1s [id=/api/v1/namespaces/nirmata]
+module.n4k_module.kubectl_manifest.secret[0]: Creating...
+module.n4k_module.kubectl_manifest.secret[0]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/secrets/nirmata-sa-secret]
+module.n4k_module.kubectl_manifest.crd[6]: Creating...
+module.n4k_module.kubectl_manifest.crd[0]: Creating...
+module.n4k_module.kubectl_manifest.crd[3]: Creating...
+module.n4k_module.kubectl_manifest.crd[2]: Creating...
+module.n4k_module.kubectl_manifest.crd[9]: Creating...
+module.n4k_module.kubectl_manifest.crd[8]: Creating...
+module.n4k_module.kubectl_manifest.crd[5]: Creating...
+module.n4k_module.kubectl_manifest.crd[1]: Creating...
+module.n4k_module.kubectl_manifest.crd[7]: Creating...
+module.n4k_module.kubectl_manifest.crd[4]: Creating...
+module.n4k_module.kubectl_manifest.crd[6]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata:policyexception-manager]
+module.n4k_module.kubectl_manifest.crd[5]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:policyexception-manager]
+module.n4k_module.kubectl_manifest.crd[10]: Creating...
+module.n4k_module.kubectl_manifest.crd[4]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata-controller-binding]
+module.n4k_module.kubectl_manifest.crd[0]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata]
+module.n4k_module.kubectl_manifest.crd[1]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/nirmata-cluster-admin-binding]
+module.n4k_module.kubectl_manifest.crd[3]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/serviceaccounts/nirmata-controller]
+module.n4k_module.kubectl_manifest.crd[2]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/namespaces/nirmata/rolebindings/nirmata-admin-binding]
+module.n4k_module.kubectl_manifest.crd[7]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:nirmata-privileged]
+module.n4k_module.kubectl_manifest.crd[8]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/configmaps/nirmata-kube-controller-config]
+module.n4k_module.kubectl_manifest.crd[9]: Creation complete after 0s [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/nirmata:nirmata-operator]
+module.n4k_module.kubectl_manifest.crd[10]: Creation complete after 0s [id=/api/v1/namespaces/nirmata/configmaps/otel-agent-config]
+module.n4k_module.kubectl_manifest.deployment[1]: Creating...
+module.n4k_module.kubectl_manifest.deployment[0]: Creating...
+module.n4k_module.kubectl_manifest.deployment[1]: Creation complete after 3s [id=/apis/apps/v1/namespaces/nirmata/deployments/otel-agent]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [1m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [2m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [3m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [4m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [5m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [6m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [7m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [8m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m0s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m10s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m20s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m30s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m40s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [9m50s elapsed]
+module.n4k_module.kubectl_manifest.deployment[0]: Still creating... [10m0s elapsed]
+╷
+│ Error: nirmata/nirmata-kube-controller failed to fetch resource from kubernetes: context deadline exceeded
+│ 
+│   with module.n4k_module.kubectl_manifest.deployment[0],
+│   on n4k_module/main.tf line 32, in resource "kubectl_manifest" "deployment":
+│   32: resource "kubectl_manifest" "deployment" {

@@ -1,0 +1,65 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-agent
+  namespace: nirmata
+  labels:
+    app: opentelemetry
+    component: otel-agent
+    app.kubernetes.io/instance: nirmata
+    app.kubernetes.io/name: nirmata
+spec:
+  selector:
+    matchLabels:
+      app: opentelemetry
+      component: otel-agent
+      app.kubernetes.io/instance: nirmata
+      app.kubernetes.io/name: nirmata
+  template:
+    metadata:
+      labels:
+        app: opentelemetry
+        component: otel-agent
+        app.kubernetes.io/instance: nirmata
+        app.kubernetes.io/name: nirmata
+    spec:
+      containers:
+      - name: otel-agent
+        image: ghcr.io/nirmata/metrics-agent:0.38.3
+        resources:
+          limits:
+            cpu: 100m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: 8888
+            scheme: HTTP
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: 8888
+            scheme: HTTP
+        volumeMounts:
+        - mountPath: /etc/otel/config.yaml
+          name: data
+          subPath: config.yaml
+          readOnly: true
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: data
+        configMap:
+          name: otel-agent-config
